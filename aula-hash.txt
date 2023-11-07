@@ -1,0 +1,31 @@
+------ 23/10 ------
+Hash:
+
+no terminal do windows:
+"certutil -hashfile nomearquivo.txt md5"
+
+Para uma entrada de tamanho variavel, tem uma saída de tamanho fixo
+
+Ex:                         Hash:       mod % 5 (length/para colocar a posição da capital):         nova posicao:
+    "Paraná"                10          0                                                           0
+    "Santa Catarina"        04          4                                                           4
+    "Rio Grandre do Sul"    16          1                                                           6
+    "Rio de Janeiro"        05          0                                                           5
+    "Amazonas"              38          3                                                           8
+    "Amapa"                 9           4                                                           9
+    "Goias"                 4           4                                                           4
+
+    - sha512sum (outra maneira)
+    - Mapear para localizar arquivos de maneira mais rápida
+    - Em java: HashMap      Em python: dictionary
+
+    Principio da casa do pombos: as funções de hash ocasionar duplicidade dos hashs por ser limitado
+
+    - como resolver: lista de valores com os hashs (e percorre apenas a lista) // chamada colisao
+        cria-se uma lista para os elementos que tem o mesmo calculo de posição
+    - Threshold (limiar de 0.75 ou 75%)
+        quando o mapa hash chega proximo ao limite, dobra-se seu tamanho E recalcula as posições
+    
+
+
+
