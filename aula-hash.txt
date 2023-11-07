@@ -25,6 +25,28 @@ Ex:                         Hash:       mod % 5 (length/para colocar a posição
         cria-se uma lista para os elementos que tem o mesmo calculo de posição
     - Threshold (limiar de 0.75 ou 75%)
         quando o mapa hash chega proximo ao limite, dobra-se seu tamanho E recalcula as posições
+
+--------------------------------------------------------------------------------------------------------------------------
+
+    aula 07/11/23
+
+    // Numeros em guarani 
+
+    Algoritmos de ordenação
+        - precisa de critério de ordenação (tamanho, numeros, letras, etc)
+
+        algoritmo da bolha "as bolhas maiores, sobem primeiro"
+        -- bubble sort --
+        ex numeros: 94 - 27 - 32 - 46 - 8 - 0
+        compara de dois em dois e vai mudando suas posições
+
+
+
+
+
+
+
+
     
 
 
