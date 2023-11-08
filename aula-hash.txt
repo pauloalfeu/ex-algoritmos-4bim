@@ -40,6 +40,23 @@ Ex:                         Hash:       mod % 5 (length/para colocar a posição
         ex numeros: 94 - 27 - 32 - 46 - 8 - 0
         compara de dois em dois e vai mudando suas posições
 
+------------------------------------------------------------------------------------------------------------------------
+
+    aula 08/11/23
+    Classificação de algoritmos de ordenação: estaveis e não estaveis
+
+    bubble sort
+    {35, 11x, 17, 11y}
+    {11x, 35, 17, 11y}
+    {11x, 17, 35, 11y}
+    {11x, 17, 11y, 35}
+    {11x, 11y, 17, 35}
+
+    ordem entre elementos iguais é mantida === ESTAVEL!      //insertionSort, selectionSort
+        else == INSTAVEL!
+
+    // à ver quick sort
+
 
 
 
