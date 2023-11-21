@@ -102,18 +102,20 @@ public class ordenacoes {
         int[] val_B = vetorB;
         int[] res = new int[val_A.length + val_B.length];
 
-        int i=0, j=0, k, menor_valor;
+        int i=0, j=0, k=0, tam;
 
-        for(k=0; k<res.length; k++){
+        tam = val_A.length+val_B.length;
+
+        for(k=0; k<tam; k++){
                 if(i < val_A.length && j<val_B.length){ //para não tentar acessar uma posição que não existe
-                    if(val_A[i] < val_B[j]){
+                    if(val_A[i] <= val_B[j]){
                         res[k] = val_A[i];
                         i++;
                     } else {
                         res[k] = val_B[j];
                         j++;
                     }}else {
-                        if(i >= val_A.length){ res[k] = val_B[j]; j++;} else{
+                        if(i >= val_A.length){ res[k] = val_B[j]; j++;} else{ //se o i extrapolou, adiciona valor do vb
                             res[k] = val_A[i]; i++;
                         }
                     }
@@ -125,16 +127,62 @@ public class ordenacoes {
      }
 
      /*
-      * Split Sort
+      Função auxiliar do merge sort.
+     vetor de entrada: {5, 7, 9, 11, 13, 15}
+     valores de inicio e fim {0, 3}
+     retorna uma copia do vertor de entrada com inicio e fim das entradas de parametro {5, 7, 9, 11}
       */
 
+      public static int[] recorte_vetor(int[]vetor, int ini, int fim){
+        int i, k=0;
+        int[] vr = new int[fim-ini];
+
+        for(i=ini; i<fim; i++){
+            vr[k] = vetor[i];
+            k++;
+        }
+
+        return vr;
+      }
+
+      public static int[] merge_sort(int[] v){
+        int[] vr, ve, vd;
+        int meio;
+
+        if(v.length < 2){
+            return v;
+        }
+
+        meio = v.length/2;
+        ve = recorte_vetor(v, 0, meio);
+        vd = recorte_vetor(v, meio, v.length);
+
+        vr = mergeSort(merge_sort(ve), merge_sort(vd));
+
+        return vr;
+      }
+
+      // ------------------- QUICK SORT ---------------------------
+
+      /*
+      escolhe um elemento pivo, e percorre pelo vetor... os elementos percorridos que forem menores ficam a esquerda e os maiores a direita
+      ele tbm é recursivo
+      - deve-se escolher o melhor pivo possivel com uma boa função de particionamento
+      Particionamento de lomuto
+      
+      */ 
+    
     
 
     public static void main (String[]args){
         //int vetor[] = {94, 27, 32, 46, 8, 0};
-        //int vetor[] = {66, 25, 77, 13, 1, 0};
-        int vetorA[] = {15, 19, 28};
-        int vetorB[] = {14, 16, 30, 35};
+        int vetor[] = {66, 25, 77, 13, 1, 0};
+        
+        /*
+         vetores do merge sort
+         int vetorA[] = {5, 7, 9, 11};
+         int vetorB[] = {6, 10, 12, 15};
+         */
 
         /*Bubble Sort
         int valores[] = bubbleSort(vetor);
@@ -148,8 +196,20 @@ public class ordenacoes {
          */
         
         // selectionSort(vetor);
-        int vetorC[] = mergeSort(vetorA, vetorB);
 
-        printVetor(vetorC);
+        
+        //int vetorC[] = mergeSort(vetorA, vetorB);
+
+        //int res[] = recorte_vetor(vetor, 1, 3);
+
+        /* exemplo de funcionamento do merge_sort
+         vetor: {35, 27, 22, 59, 4, 0, 82}
+         ve {35, 27, 22}
+         v1{35} v2{27, 22}
+         */
+        int res[] = merge_sort(vetor);
+
+
+        printVetor(res);
     }
 }
