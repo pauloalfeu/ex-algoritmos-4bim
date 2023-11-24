@@ -171,12 +171,31 @@ public class ordenacoes {
       Particionamento de lomuto
       
       */ 
+      public static int particionamento (int[] vetor, int ini, int fim){
+        int pos_pivot = ini, int i=ini, j=ini+1;
+
+        //gerar valores aleatorios e encontrar a mediana entre eles
+
+        return i;
+      }
+
+      public static void quickSort (int[] vetor, int ini, int fim){
+        quick_sort_(vetor, 0, vetor.length-1);
+      }
+
+      public static void quick_sort_(int[] vetor, int ini, int fim){
+        if (ini < fim){
+            int pos_pivot = particionamento(vetor, ini, fim);
+            quick_sort_(vetor, ini, pos_pivot-1);
+            quick_sort_(vetor, pos_pivot+1, fim);
+        }
+      }
     
-    
+    //**  ------------------------------------------ EXECUÇÃO ----------------------------------------------------------
 
     public static void main (String[]args){
         //int vetor[] = {94, 27, 32, 46, 8, 0};
-        int vetor[] = {66, 25, 77, 13, 1, 0};
+        //int vetor[] = {66, 25, 77, 13, 1, 0};
         
         /*
          vetores do merge sort
@@ -207,9 +226,9 @@ public class ordenacoes {
          ve {35, 27, 22}
          v1{35} v2{27, 22}
          */
-        int res[] = merge_sort(vetor);
+        //int res[] = merge_sort(vetor);
 
 
-        printVetor(res);
+        //printVetor();
     }
 }

@@ -55,7 +55,7 @@ Ex:                         Hash:       mod % 5 (length/para colocar a posição
     ordem entre elementos iguais é mantida === ESTAVEL!      //insertionSort, selectionSort
         else == INSTAVEL!
 
-    // à ver quick sort
+    // quick sort não é estavel!
 
 
 
