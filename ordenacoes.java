@@ -172,7 +172,8 @@ public class ordenacoes {
       
       */ 
       public static int particionamento (int[] vetor, int ini, int fim){
-        int pos_pivot = ini, int i=ini, j=ini+1;
+        int pos_pivot = ini;
+        int i=ini, j=ini+1;
 
         //gerar valores aleatorios e encontrar a mediana entre eles
 
